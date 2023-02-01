@@ -1,0 +1,9 @@
+sudo amazon-linux-extras install epel -y
+    7  sudo yum install putty
+    8  sudo puttygen testkey.ppk -O private-openssh -o pemkey.pem
+    9  ls -lstr
+   10  chown ec2-user:ec2-user pemkey.pem
+   11  sudo chown ec2-user:ec2-user pemkey.pem
+   12  ls -lstr
+   13  chmod 400 pemkey.pem
+   14  ssh -i pemkey.pem ec2-user@10.20.2.119
